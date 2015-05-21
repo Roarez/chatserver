@@ -64,9 +64,25 @@ div.mydiv, div.info {
     margin: 5px;
 }
 
-#messages form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 90%; }
-#messages form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-#messages form button { width: 9%; background: coral; border: none; padding: 10px; }
+#messages form {
+	background: #000;
+	padding: 3px;
+	position: fixed;
+	bottom: 0;
+	width: 90%;
+}
+#messages form input {
+	border: 0;
+	padding: 10px;
+	width: 90%;
+	margin-right: .5%;
+}
+#messages form button {
+	width: 9%;
+	background: coral;
+	border: none;
+	padding: 10px;
+}
 
 #messages {
 	list-style-type: none;
@@ -82,4 +98,17 @@ div.mydiv, div.info {
 	background: #eee;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.event {
+  font-style: italic;
+  color: green;
+}
+
+#loggedusr {
+  visibility: hidden;
+}

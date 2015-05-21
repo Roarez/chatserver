@@ -15,8 +15,6 @@ html
                         li
                             a(href='/') Chat
                         li
-                            a(href='/Settings') Settings
-                        li
                             a(href='/logout') Logout
                     else
                         li
@@ -26,10 +24,9 @@ html
         div.info
             if username
                 p='Welcome '+username
+                input(id="loggedusr" value=username)
             else
                 p Welcome stranger
         div.mydiv
             block content
-    script(src="/socket.io/socket.io.js")
-    script(src="http://code.jquery.com/jquery-1.11.1.js")
-    script(src="/javascripts/main.js")
+    block scripts

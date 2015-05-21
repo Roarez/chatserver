@@ -44,14 +44,9 @@ router.post('/signin', function(req, res) {
 	});
 });
 
-router.get('/settings', function(req, res, next) {
-  res.render('settings', { title: 'Settings' });
-});
-
 router.get('/logout', function(req, res, next) {
-	//socket.emit('logout', username);
 	res.clearCookie('name');
 	res.redirect('/signin');
-})
+});
 
 module.exports = router;
