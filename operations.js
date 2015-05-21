@@ -22,11 +22,16 @@ function addUser(username, password, callback) {
 function authenticate(username, password, callback) {
     usercol.find({"username": username},{"hash": 1}, function(e,docs){
         if (e) return callback(e);
-        bcrypt.compare(password, docs[0].hash, function(err, res) {
-            if (err) return callback(err);
-            if (res) callback(null, docs);
-            else callback(null, null);
-        });
+        if (docs.length === 0) {
+            return callback(null, []);
+        }
+        else {
+            bcrypt.compare(password, docs[0].hash, function(err, res) {
+                if (err) return callback(err);
+                if (res) callback(null, docs);
+                else callback(null, null);
+            });
+        }
     });
 }
 
